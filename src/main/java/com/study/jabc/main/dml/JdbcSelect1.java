@@ -1,4 +1,4 @@
-package main.java.com.study.jabc.main;
+package main.java.com.study.jabc.main.dml;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import com.mysql.cj.jdbc.Driver;
 
 import main.java.com.study.jabc.util.DBConnection;
 
-public class jdbcTest1 {
+public class JdbcSelect1 {
 
 	public static void main(String[] args) {
 //		System.out.println(Driver.class.getName());
