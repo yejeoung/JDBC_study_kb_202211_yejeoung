@@ -14,17 +14,15 @@ public class JdbcSelect2 {
 
 		/* 데이터베이스의 borad_mst의 데이터를 가지고 와서 Scanner를 받아 Java에서 출력해라. */
 
+		Connection connection = DBConnection.getInstance().getConnection();
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("작성자 id: ");
 		int writerId = scanner.nextInt();
 
-		Connection connection = DBConnection.getInstance().getConnection();
-
 		String sql = "select * from board_mst where writer_id = ?";
-		PreparedStatement pstmt;
 
 		try {
-			pstmt = connection.prepareStatement(sql);
+			PreparedStatement pstmt = connection.prepareStatement(sql);
 			pstmt.setInt(1, writerId);
 			// writerId를 물음표로 대신한다.
 			ResultSet rs = pstmt.executeQuery();
@@ -34,9 +32,7 @@ public class JdbcSelect2 {
 			while (rs.next()) {
 				System.out.println("id: " + rs.getInt(1) + "\ttitle: " + rs.getString(2) + "\tcontent: "
 						+ rs.getString(3) + "\tread_count: " + rs.getInt(4) + "\twriter_id: " + rs.getInt(5));
-
 			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

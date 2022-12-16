@@ -29,3 +29,4 @@ public class JdbcUpdate1 {
 		}
 	}
 }
+//workbeachs에 들어가면 입력한 id에 대한 값이 바뀐 것을 확인할 수 있다.

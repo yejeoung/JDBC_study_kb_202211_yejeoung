@@ -29,6 +29,7 @@ public class JdbcSelect1 {
 		try {
 			PreparedStatement pstmt = connection.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
+			// executeQuery SELECT문
 			
 			System.out.println("id\t name\t\t score");
 			
